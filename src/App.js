@@ -5,7 +5,7 @@ function App() {
     <div >
       <Login/>
     </div>
-  );
+  );  
 }
 
 export default App;
