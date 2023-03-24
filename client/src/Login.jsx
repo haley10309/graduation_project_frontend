@@ -1,7 +1,14 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [protein, setProtein] = useState("");
+
+  function Ptest(e) {
+    window.location.href = "/Login";
+    axios.post("/Login", { proName: protein });
+  }
 
   return (
     <div className="page">
@@ -21,7 +28,7 @@ export default function Login() {
         <div className="errorMessageWrap">올바른 시퀀스를 입력해 주세요</div>
       </div>
       <div>
-        <button disabled={true} className="bottomButton">
+        <button disabled={false} onClick={Ptest} className="bottomButton">
           확인
         </button>
       </div>
