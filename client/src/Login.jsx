@@ -7,7 +7,24 @@ export default function Login() {
 
   function Ptest(e) {
     window.location.href = "/Login";
-    axios.post("/Login", { proName: protein });
+    axios.post("/Login", { proName: this.state.protein });
+    //api post
+    const register = () => {
+      axios
+        .post("http://localhost:1337/api/auth/local/register", {
+          proteinName: protein,
+        })
+        .then((response) => {
+          // Handle success.
+          console.log("Well done!");
+          console.log("User profile", response.data.user);
+          console.log("User token", response.data.jwt);
+        })
+        .catch((error) => {
+          // Handle error.
+          console.log("An error occurred:", error.response);
+        });
+    };
   }
 
   return (
