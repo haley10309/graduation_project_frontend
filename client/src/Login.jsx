@@ -3,29 +3,22 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Login() {
-  const [protein, setProtein] = useState("");
+  const [protein, setProtein] = useState(""); //입력 값 변수 [입력값, 입력값 변경]
 
-  function Ptest(e) {
+  const confirm = (e) => {
+    // 확인 후 다음 페이지
     window.location.href = "/Login";
-    axios.post("/Login", { proName: this.state.protein });
+
+    axios
+      .post("http://localhost:5000/api/proteinInput", {
+        proName: this.state.protein,
+      })
+      .then((res) => console.log("Posting data", res))
+      .catch((error) => {
+        console.log("error occurred: ", error.response);
+      });
     //api post
-    const register = () => {
-      axios
-        .post("http://localhost:1337/api/auth/local/register", {
-          proteinName: protein,
-        })
-        .then((response) => {
-          // Handle success.
-          console.log("Well done!");
-          console.log("User profile", response.data.user);
-          console.log("User token", response.data.jwt);
-        })
-        .catch((error) => {
-          // Handle error.
-          console.log("An error occurred:", error.response);
-        });
-    };
-  }
+  };
 
   return (
     <div className="page">
@@ -45,7 +38,7 @@ export default function Login() {
         <div className="errorMessageWrap">올바른 시퀀스를 입력해 주세요</div>
       </div>
       <div>
-        <button disabled={false} onClick={Ptest} className="bottomButton">
+        <button disabled={false} onClick={confirm} className="bottomButton">
           확인
         </button>
       </div>
