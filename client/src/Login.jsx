@@ -7,6 +7,7 @@ export default function Login() {
 
   const confirm = (e) => {
     // 확인 후 다음 페이지
+    e.preventDefault();
     window.location.href = "/Login";
 
     axios
