@@ -1,22 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
 export default function Login() {
   const [protein, setProtein] = useState(""); //입력 값 변수 [입력값, 입력값 변경]
 
-  const confirm = (e) => {
+  const handleInput = (event) => {
+    setProtein(event.target.value); //변수 저장 완료
+  };
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://proteinput/api")
+  //     .then((res) => {
+  //       console.log("getting from...", res.data);
+  //     })
+  //     .catch((err) => console.log("에러!", err));
+  // }, []);
+
+  const confirm = (event) => {
     // 확인 후 다음 페이지
-    e.preventDefault();
-    window.location.href = "/Login";
+    event.preventDefault();
+    const userProtein = {
+      proteinInput: protein,
+    };
+    //window.location.href = "/Login";
+    console.log(protein);
 
     axios
-      .post("http://localhost:5000/api/proteinInput", {
-        proName: this.state.protein,
+      .post("/api/proteinInput", {
+        userProtein,
       })
-      .then((res) => console.log("Posting data", res))
+      .then((res) => console.log("posting data", res.data))
       .catch((error) => {
-        console.log("error occurred: ", error.response);
+        console.log("음..error occurred: ", error.response);
       });
     //api post
   };
@@ -31,8 +48,9 @@ export default function Login() {
           <input
             className="input"
             value={protein} //input으로 받은 프로틴 시퀀스
-            onChange={(e) => setProtein(e.target.value)}
+            onChange={handleInput}
           />
+
           {/* place holder 넣어 보기 */}
         </div>
 
@@ -46,3 +64,4 @@ export default function Login() {
     </div>
   );
 }
+// http://localhost:5000/api/proteinInput
