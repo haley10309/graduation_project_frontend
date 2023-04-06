@@ -69,3 +69,11 @@ body {
     margin: auto;
     display: block;
 }
+.Site-explaining{
+    margin: 100px;
+    padding: 10px;
+    font-size: 20px;
+    color: #353535;
+    font-family:  "NanumSquare", sans-serif;
+    text-rendering: optimizeLegibility;
+}
