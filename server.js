@@ -7,5 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true}));
 
 app.get('/api/proteinInput',(req,res) => {
-
+    res.send({message: 'Hello Express!!'});
 });
+
+app.listen(port, () => console.log(`listening on port ${port}`));
