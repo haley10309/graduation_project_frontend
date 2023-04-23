@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom"; 
 import { useEffect } from "react";
 import { useState } from "react";
+import instance from "../Request";
 
 export default function Search(){
     
@@ -10,24 +11,32 @@ export default function Search(){
 
   const handleInput = (event) => {
     setProtein(event.target.value); //변수 저장 완료
+    
   };
 
-  const confirm = (event) => {
+  
+   const confirm = async (event) => {
     // 확인 후 다음 페이지
     event.preventDefault();
-
     window.location.href = "/proteinInput";
+    await axios.post(
+      "http://localhost:3000/proteinInput",
+      {
+        protein
+      },
+      {
+        headers : {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    )
+    
     console.log(protein);
 
-    axios
-      .post("/api/proteinInput", {
-        protein,
-      })
-      .then((res) => console.log("posting data", res.data))
-      .catch((error) => {
-        console.log("음..error occurred: ", error.response);
-      });
+    
     //api post
+      
     localStorage.setItem("proteinName", protein);
     //localstorage 업로드
   };

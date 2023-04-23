@@ -10,7 +10,7 @@ import Refer from "./pages/Refer";
 
 
 function App() {
-  console.log(window.location.pathname)
+  //console.log(window.location.pathname)
   return (
     
     <BrowserRouter>
