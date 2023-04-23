@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import instance from "../Request";
+import qs from "qs";
 
 
 
@@ -23,22 +24,18 @@ export default function Search(){
     setProteinName(protein);
     
 
-    window.location.href = "/proteinInput";
+    //window.location.href = "/proteinInput";
 
-
-    axios.get("/api/Input",
-      {Name : protein},
-      {
-        headers : {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    ).then(function (response) {
+   
+    axios.get('/api/Input',
+      {params: { "proteinName" : protein }
+    }).then(function (response) {
       console.log(protein);
      }).catch(function (error){
       console.log(error);
      })
+
+     
      
     
     //console.log(protein);
