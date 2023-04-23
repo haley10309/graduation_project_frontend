@@ -20,10 +20,14 @@ export default function Search(){
    const confirm = async (event) => {
     // 확인 후 다음 페이지
     event.preventDefault();
-    setProteinName(protein)
+    setProteinName(protein);
+    
+
     window.location.href = "/proteinInput";
-    await axios.post("http://localhost:5000/api/Input",
-      {Name : proteinName},
+
+
+    axios.get("/api/Input",
+      {Name : protein},
       {
         headers : {
           "Content-Type": "application/json",
@@ -31,18 +35,18 @@ export default function Search(){
         },
       }
     ).then(function (response) {
-      console.log(proteinName);
+      console.log(protein);
      }).catch(function (error){
       console.log(error);
      })
      
     
-    console.log(proteinName);
+    //console.log(protein);
 
     
     //api post
       
-    localStorage.setItem("proteinName", proteinName);
+    localStorage.setItem("proteinName", protein);
     //localstorage 업로드
   };
 
