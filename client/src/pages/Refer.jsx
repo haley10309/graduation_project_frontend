@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import prediction from "./prediction";
+import HowAlpha from "./HowAlpha";
+import HowRoseta from "./HowRoseta";
 
-export default function Refer() {
-  return <div className="WordRefer">Refer</div>;
-}
+const Refer = () => {
+  return{
+    
+  };
+ 
+};
+export default Refer;

@@ -34,6 +34,13 @@ export default function Search(){
      }).catch(function (error){
       console.log(error);
      })
+     axios.post('/api/Input',{
+      proteinName: protein
+     }).then(function(response){
+      console.log("포스트 완료");
+     }).catch(function (error){
+      console.log(error);
+     })
 
      
      
