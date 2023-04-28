@@ -2,11 +2,12 @@ import Login from "./pages/Home"
 import React, { Component } from 'react';
 import { BrowserRouter,Route, Routes } from "react-router-dom";
 import AFoutput from "./AFoutput";
-import NavBar from "./NavBar";
+import Navbar from "./pages/NavBar";
 import About from "./pages/About";
 import Search from "./pages/Search";
 import Home from "./pages/Home";
 import Refer from "./pages/Refer";
+import Prediction from "./pages/Prediction";
 
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
     
     <BrowserRouter>
       <div >
-      <NavBar/>
+      <Navbar/>
         <Routes>
         
           <Route path="/" element={ <Home/> } />
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Search/*" element={  <Search/> } />
           <Route path="/About/*" element={  <About/> } />
           <Route path="/Refer/*" element={  <Refer/> } />
+          <Route path="/Refer/prediction/*" element ={ <Prediction/>} />
         </Routes>
       </div>
     </BrowserRouter>
