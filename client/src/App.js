@@ -8,7 +8,8 @@ import Search from "./pages/Search";
 import Home from "./pages/Home";
 import Refer from "./pages/Refer";
 import Prediction from "./pages/Prediction";
-
+import HowAlpha from "./pages/HowAlpha";
+import HowRoseta from "./pages/HowRoseta";
 
 function App() {
   //console.log(window.location.pathname)
@@ -25,6 +26,9 @@ function App() {
           <Route path="/About/*" element={  <About/> } />
           <Route path="/Refer/*" element={  <Refer/> } />
           <Route path="/Refer/prediction/*" element ={ <Prediction/>} />
+          <Route path="/Refer/HowAlpha/*" element ={ <HowAlpha/>} />
+          <Route path="/Refer/HowRoseta/*" element ={ <HowRoseta/>} />
+
         </Routes>
       </div>
     </BrowserRouter>
