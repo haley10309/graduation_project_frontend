@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 export default function About() {
   return (
     <div className="firstImg">
-      <img className="AboutImg" alt="role" src="/img/role.png" />
+      <h1 className="refer-title">
+        단백질 구조 예측 AI
+      </h1>
+      <h1 className="title-N1">
+        1. 단백질 구조 예측 AI의 의의
+      </h1>
     </div>
   );
 }
