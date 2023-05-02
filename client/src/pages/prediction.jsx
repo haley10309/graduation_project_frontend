@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Prediction() {
   return (
-    <div className="firstImg">
+    <div className="prediction-page">
       <h1 className="refer-title">
         단백질 구조 예측 AI
       </h1>
