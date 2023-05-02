@@ -45,7 +45,7 @@ const Navbar = () => {
           
                 <li >
                     
-                    <a href="/Refer/prediction/*">Prediction</a>
+                    <a href="/Refer/Prediction/*">Prediction</a>
                 </li>
                 <li>
                     <a href="/Refer/HowAlpha/*">HowAlpha</a>
