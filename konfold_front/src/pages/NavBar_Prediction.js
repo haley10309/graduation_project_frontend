@@ -33,7 +33,7 @@ const NavBar_Prediction = () => {
                 4. 성능확인
             </a>
           </li>
-          
+          <Span></Span>
         </nav>
     )
 }

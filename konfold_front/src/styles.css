@@ -148,7 +148,7 @@ body {
   gap: 2rem;
   list-style-type: none;
   height: 50px;
-  
+  border-radius: 30px;
 }
 
 .prediction_nav a{
