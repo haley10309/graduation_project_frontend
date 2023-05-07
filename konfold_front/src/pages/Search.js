@@ -18,8 +18,10 @@ export default function Search(){
   function changeButton(){
     const UpperProtein = protein.toUpperCase();
    
-    UpperProtein.includes('G' ||'A'||'V'||'L'||'I'||'S'||'T'||'C'||'M'||'D'||'E'||'N'||'Q'||'K'||'R'||'F'||'Y'||'W'||'H'||'P'||'U') ? setButton(false) : setButton(true)
-  
+   // UpperProtein.includes('G'||'A'||'V'||'L'||'I'||'S'||'T'||'C'||'M'||'D'||'E'||'N'||'Q'||'K'||'R'||'F'||'Y'||'W'||'H'||'P'||'U') ? setButton(false) : setButton(true)
+    // UpperProtein.includes('G'||'A'||'V'||'L'||'I'||'S'||'T'||'C'||'M'||'D'||'E'||'N'||'Q'||'K'||'R'||'F'||'Y'||'W'||'H'||'P'||'U') ? setButton(false) : setButton(true)
+    (UpperProtein.includes("B") || UpperProtein.includes("J") || UpperProtein.includes("O") || UpperProtein.includes("X") || UpperProtein.includes("Z") || UpperProtein.includes(" ")) ? setButton(true) : setButton(false)
+
    }
 
 
@@ -51,7 +53,7 @@ export default function Search(){
      })
 
 
-     axios.post('/api/Input',{
+     axios.post('http://127.0.0.1:5000/api/Input',{
       proteinName: protein
      }).then(function(response){
       console.log("포스트 완료");
