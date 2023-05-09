@@ -12,6 +12,8 @@ export default function Pred_mech(){
     max-width: 80%;
     margin: 0 auto;
     `;
+
+    
     function Span({ space = 20 }){
 	return (
     	<span style={{ paddingRight: space }}></span>
@@ -45,7 +47,7 @@ AlphaFold는 단백질 구조예측 학술대회 CASP(Critical Assessment of Str
       </h1>
       <Wrap >
       <div>
-        <img className="structure_prediction_precise.jpeg" alt="role" src="/img/structure_prediction_precise.jpeg" />
+        <img className="process_img" alt="role" src="/img/structure_prediction_precise.jpeg" />
       </div>
       
       </Wrap>
@@ -65,7 +67,33 @@ AlphaFold는 단백질 구조예측 학술대회 CASP(Critical Assessment of Str
       <Span /><Span />
       2022년 7월 AlphaFold2의 논문과 오픈소스, 데이터베이스가 공개되었다. 공개된 자료에 따른 AlphaFold2의 아키텍처는 다음과 같이 3단계로 구성된다.
       </h1>
+      <hi className="ref_left">
+      AlphaFold 참고자료
+        </hi>
+        
+      <hi className="ref_left">
+      Website<Span /><Span />https://www.deepmind.com/research/highlighted-research/alphafold
 
+        </hi>
+        
+      <hi className="ref_left">
+      Source <Span /><Span />https://github.com/deepmind/alphafold
+        </hi>
+        <hi className="ref_left">
+        Paper<Span /><Span />	“Highly accurate protein structure prediction with AlphaFold(2021)”
+        </hi>
+        <hi className="ref_left">
+        <Span /><Span /><Span /><Span />	“Supplementary information for: Highly accurate protein structure prediction with AlphaFold(2021)”
+        </hi>
+        <hi className="ref_left">
+        <Span /><Span /><Span /><Span />	“AlphaFold Protein Structure Database: massively expanding the structural coverage of protein sequence space with high-accuracy models(2022)”
+        </hi>
+        <div>
+        <img className="process_img" alt="role" src="/img/model_architecture.png" />
+      </div>
+      <hi className="img_title">
+      그림 5 AlphaFold2 model architecture
+        </hi>
       
       
         </div>
