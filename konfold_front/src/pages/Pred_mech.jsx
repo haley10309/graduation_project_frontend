@@ -94,7 +94,41 @@ AlphaFold는 단백질 구조예측 학술대회 CASP(Critical Assessment of Str
       <hi className="img_title">
       그림 5 AlphaFold2 model architecture
         </hi>
-      
+        <h1 className="korean-protein-expaination">
+      1단계. Input Feature embeddings, 입력 데이터 전처리
+       </h1>
+       <h1 className="korean-protein-expaination">
+       <Span /><Span />입력 데이터를 모델에서 사용할 수 있게 전처리하는 단계이다. 단백질 서열이 입력되면 데이터베이스에서 유사한 서열을 검색하여 다중서열정렬(MSA, Multiple Sequence Alignment)를 생성하고, 알려진 단백질 템플릿에서 유사한 서열을 가진 부분을 pairing한다. 그리고 이를 통합해 MSA representation과 Pair representation을 만든다. 이 과정을 여러 번 반복한 결과의 평균값을 다음단계로 내보낸다.
+       </h1>
+       <hi className="ref_left">
+        <Span /><Span />
+        input: amino-acid sequence
+        </hi>
+        <hi className="ref_left">
+        <Span /><Span />	
+        output: Create the initial version of the MSA representation and pair representation
+        </hi>
+        <hi className="ref_left">
+        <Span /><Span />	
+        -Genetic database search 🡪 MSA 🡪 MSA representation (진화적 특징 반영)
+        </hi>
+        <hi className="ref_left">
+        <Span /><Span />	
+        -Amino acid paring 🡪 2차원 형태로 변환 🡪 pair representation (공간적 특징 반영)        </hi>
+        <h1 className="korean-protein-expaination">
+        2단계. Evoformer, Attention 학습을 통해 전처리된 데이터에서 필요한 정보를 뽑아냄
+       </h1>
+       <div>
+        <img className="process_img" alt="role" src="/img/evoformer_block.png" />
+      </div>
+      <hi className="img_title">
+      그림 6 Evofomer block
+      </hi>
+      <h1 className="korean-protein-expaination">
+      주어진 MSA representation과 pair representation을 self-attention 메커니즘에 적용하여 필요한 정보만 갖도록 개선하는 단계이다. 이 단계에서는 각각의 representation이 입력되어 단백질의 공간적, 진화적 관계에 대한 직접적인 추론을 가능하게 하는 정보를 교환함으로써 반복적으로 개선된다. 그 결과 단백질 구조에 대한 2D representation을 얻게 된다. 
+       </h1>
+
+
       
         </div>
     )
