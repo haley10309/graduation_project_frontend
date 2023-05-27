@@ -42,18 +42,18 @@ export default function Search(){
     setProteinName(protein);
     
 
-    //window.location.href = "/proteinInput";
+    window.location.href = "/proteinInput";
 
     // const result = await axios.get('http://127.0.0.1:5000/api/Input');
     // this.recordCount = result.headers["x-totalrecordcount"];
 
-    axios.get('http://127.0.0.1:5000/api/Input',
-      {params: { "proteinName" : protein }
-    }).then(function (response) {
-      console.log(protein);
-     }).catch(function (error){
-      console.log(error);
-     })
+    // axios.get('http://127.0.0.1:5000/api/Input',
+    //   {params: { "proteinName" : protein }
+    // }).then(function (response) {
+    //   console.log(protein);
+    //  }).catch(function (error){
+    //   console.log(error);
+    //  })
 
 
      axios.post('/api/Input',{
@@ -103,6 +103,9 @@ export default function Search(){
         className="bottomButton">
           확인
         </button>
+      </div>
+      <div className="inputTitle"> 
+        단백질 3D 구조 시각화 화면입니다
       </div>
     </div>
   );
