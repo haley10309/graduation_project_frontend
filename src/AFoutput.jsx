@@ -10,31 +10,33 @@ export default function AFoutput() {
   
 
   useEffect(() => {
-    // fetch("/api/Input")
-    //     .then(res=> res.json())
-    //     .then(res => {
-    //       console.log(res);
-    //       setId(res);
-    //     });
+    fetch("/api/Input")
+        .then(res=> res.json())
+        .then(res => {
+          console.log(res);
+          setId(res);
+        }).catch(e => {
+          console.log("e", e)
+        })
 
-        fetch("/api/Input", {
-          method : "POST",
-          headers : {
-            "Content-Type" : "application/json; charset=utf-8"
-          },
-          body : JSON.stringify(Id)
-        })
-        .then(res=> {
-          console.log(res);
-          //json 파싱전 , 상태 코드 확인 해서 res 값 초기화
-        })
-        .then(res=> {
-          console.log(res);
-          //res 값에 따른 결과 처리
-          if(res == null){
-            alert("등록 실패");
-          }
-        })
+        // fetch("/api/Input", {
+        //   method : "POST",
+        //   headers : {
+        //     "Content-Type" : "application/json; charset=utf-8"
+        //   },
+        //   body : JSON.stringify(Id)
+        // })
+        // .then(res=> {
+        //   console.log(res);
+        //   //json 파싱전 , 상태 코드 확인 해서 res 값 초기화
+        // })
+        // .then(res=> {
+        //   console.log(res);
+        //   //res 값에 따른 결과 처리
+        //   if(res == null){
+        //     alert("등록 실패");
+        //   }
+        // })
           
 
 

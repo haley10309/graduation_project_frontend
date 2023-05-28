@@ -3,8 +3,6 @@ import axios from 'axios'  ;
 import { Link } from "react-router-dom"; 
 import { useEffect } from "react";
 import { useState } from "react";
-import instance from "../Request";
-import qs from "qs";
 
 
 
@@ -16,11 +14,19 @@ export default function Search(){
   const [button, setButton] = useState(true);
   const isAlpha = str => /^[a-zA-Z]*$/.test(str);
     
-  const url = "http://localhost:5000/api/Input";
+  const url = "/api/Input";
   const config = {"Content-Type": 'application/json'};
 
 
-    
+  useEffect (() =>{
+    // get api Implement
+    //const url = "http://localhost:5000/api/Input"
+    fetch(url).then (response => response. json ()) . then (json => {
+    console.log("jsonnnn", json)
+    }).catch(e => {
+    console.log("e", e)
+  })
+},[])
 
   function changeButton(){
     const UpperProtein = protein.toUpperCase();
@@ -40,18 +46,52 @@ export default function Search(){
   };
   
   
-   const confirm = async (event) => {
+   const Perform = async (event) => {
+    //새로고침 막음
     // 확인 후 다음 페이지
     event.preventDefault();
     setProteinName(protein);
-    const data = {
+    let data = {
       'proteinName' : protein
   };
 
+  fetch(url,{
+    method:'POST',
+    headers:{
+            'Content-Type' : 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => {
+          console.log("response", data)
+          if(response.state == 200){
+            console.log("포스트 성공")
+          }
+        }).catch(e => {
+          console.log("포스트 실패")
+        })
+  
+   
+    //  try {
+    //   const response = await fetch('http://localhost:5000/api/Input',{
+    //     method: 'POST',
+    //     headers:{
+    //       'Content-Type' : 'application/json',
+    //       'Access-Control-Allow-Origin': '*'
+    //     },
+    //     body: JSON.stringify(data)
+    //   });
 
+    //   const result = await response.json();
+    // console.log('result is: ', JSON.stringify(result, null, 4));
+
+    //  } catch(e) {
+    //   console.log("포스트 실패");
+    //  }
     
 
-    //window.location.href = "/proteinInput";
+
+    window.location.href = "/proteinInput";
 
     // axios.get('http://127.0.0.1:5000/api/Input',
     //   {params: { "proteinName" : protein }
@@ -69,12 +109,12 @@ export default function Search(){
     //  }).catch(function (error){
     //   console.log("포스트 안됨");
     //  })
-    axios.post(url, data, config)
-    .then(res => {
-      console.log("포스트 완료");
-    } ).catch(err => {
-      console.log("포스트 안됨");
-    });
+    // axios.post(url, data, config)
+    // .then(res => {
+    //   console.log("포스트 완료");
+    // } ).catch(err => {
+    //   console.log("포스트 안됨");
+    // });
     
      
      
@@ -111,7 +151,7 @@ export default function Search(){
       <div>
         <button 
         disabled={button} 
-        onClick={confirm} 
+        onClick={Perform} 
         className="bottomButton">
           확인
         </button>

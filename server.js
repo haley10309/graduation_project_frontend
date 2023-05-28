@@ -11,15 +11,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 // 사용자 입장에서 볼수 있는 api에 출력
 app.get('/api/Input', (req, res) => {
+    console.log("서버 열렸돠");
     res.send([
         {
-            'id': 1,
-            'image' : 'https://placeimg.com/64/64/4',
-            'name' : '김민수',
-            'birthday' : '961222',
-            'gender' : '남자',
-            'job' : '개발자' 
-          }
+            'id' : 1
+        }
     ])
 })
 
