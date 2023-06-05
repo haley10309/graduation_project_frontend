@@ -41,10 +41,10 @@ body {
     background-color: darkolivegreen;
 } */
 
-.nav a.active{
+/* .nav a.active{
   background-color: darkolivegreen;
 
-}
+} */
 
 .nav li:hover{
     background-color: #62936d;
@@ -94,10 +94,10 @@ body {
     transition: 0.25s ease-in-out;
   }
   
-  .nav:hover {
+  /* .nav:hover {
     height: 200px;
     cursor: pointer;
-  }
+  } */
   
   .nav .navContainer {
     height: 80px;
