@@ -16,7 +16,7 @@ export default function Search(){
     
   const url = "/api/Input";
   const config = {"Content-Type": 'application/json'};
-
+  const ptid = "1A00";
 
   useEffect (() =>{
     // get api Implement
@@ -124,7 +124,7 @@ export default function Search(){
     
     //api post
       
-    localStorage.setItem("proteinName", protein);
+    localStorage.setItem("ptid", ptid);
     //localstorage 업로드
   };
 
