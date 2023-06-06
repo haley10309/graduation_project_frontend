@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 
+
 export default function Search(){
   
   
@@ -17,6 +18,8 @@ export default function Search(){
     
   const url = "/api/Input";
   const config = {"Content-Type": 'application/json'};
+
+  const [loading, setLoading] = useState(false);
 
   //로딩 화면
   
@@ -81,20 +84,25 @@ const post = (seq) => {
 
   // button 클릭
   const confirm = async (event) => {
-    // 확인 후 다음 페이지
     event.preventDefault();
-    // output저장
-   await post(protein);
-   console.log("proteinSearchID_test:", proteinSearchID);
-   console.log("proteinSeq_test:", protein);
-
-   localStorage.setItem("proteinId", proteinSearchID['proteinId']);
-   localStorage.setItem("proteinSeq", protein);
-   
-   window.location.href = "/proteinInput";
-
-
+    
+    setLoading(true);
+    
+    try {
+      const searchResult = await post(protein);
+      
+      console.log("proteinSearchID_test:", searchResult);
+      localStorage.setItem("proteinId", searchResult['proteinId']);
+      localStorage.setItem("proteinSeq", protein);
+      
+      setLoading(false);
+      window.location.href = "/proteinInput";
+    } catch (error) {
+      console.log("데이터 가져오기 실패:", error);
+      setLoading(false);
+    }
   };
+  
   
 
 
