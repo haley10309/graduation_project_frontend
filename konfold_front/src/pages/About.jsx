@@ -32,11 +32,122 @@ export default function About() {
       - 1년 간 기록 </h1>
       <Wrap>
     <h1 className="people_date">
-      2022년 12월 2일 줌 미팅 </h1>
+      2022년 9월 5일 줌 미팅 </h1>
     
     <hr className="time_line"/>
     <div>
-        <img className="people_img" alt="2022 졸프 사진" src="/img/22_12.png" />
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_9_5.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 9월 9일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_9_9.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 9월 20일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_9_20.png" />
+      </div>
+    
+    </Wrap>
+      <Wrap>
+    <h1 className="people_date">
+      2022년 9월 22일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_9_22.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 9월 23일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_9_23.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 10월 13일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_10_13.jpg" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 10월 25일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_10_25.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 10월 28일 
+      오프라인 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_10_28.jpg" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 10월 30일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_10_30.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 11월 3일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_11_03.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 11월 14일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_11_14.png" />
+      </div>
+    
+    </Wrap>
+    <Wrap>
+    <h1 className="people_date">
+      2022년 11월 18일 줌 미팅 </h1>
+    
+    <hr className="time_line"/>
+    <div>
+        <img className="people_img" alt="2022 졸프 사진" src="/img/22_11_18.png" />
       </div>
     
     </Wrap>

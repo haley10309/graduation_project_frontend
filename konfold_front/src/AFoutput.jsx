@@ -36,8 +36,8 @@ export default function AFoutput()  {
     var localData = localStorage.getItem(name);
     return localData;
   }
-  if (localStorage.getItem("ptid")) {
-    ptid = getDataLocalStorage("ptid");
+  if (localStorage.getItem("proteinId")) {
+    ptid = getDataLocalStorage("proteinId");
     console.log(ptid);
   }
 
